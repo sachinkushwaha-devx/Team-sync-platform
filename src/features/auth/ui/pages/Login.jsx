@@ -9,7 +9,7 @@ import {
 import { useAuth } from "../hooks/Useauth.jsx";
 
 const Login = () => {
-  const { register, handleSubmit, errors, onLoginSubmit } = useAuth();
+  const { register, handleSubmit, errors, onLoginSubmit, navigate } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -250,6 +250,8 @@ const Login = () => {
             Don't have an account?{" "}
 
             <button
+              
+              onClick={() => navigate("/register")} 
               type="button"
               className="font-semibold text-[#c5a5ff] hover:underline"
             >

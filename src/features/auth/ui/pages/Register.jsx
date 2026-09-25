@@ -1,7 +1,7 @@
 import React from "react";
 import {
   User,
-  Mail,
+  Mail,  
   LockKeyhole,
   Check,
   ArrowRight,
@@ -9,7 +9,9 @@ import {
 import { useAuth } from "../hooks/Useauth.jsx";
 
 function Register() {
-  const { register, handleSubmit, watch, errors, onRegisterSubmit } = useAuth();
+  const { register, handleSubmit, watch, errors, onRegisterSubmit, navigate
+
+   } = useAuth();
   const password = watch("password", "");
 
   const onSubmit = (data) => {
@@ -350,6 +352,7 @@ function Register() {
                 <p className="pt-5 text-center text-[11px] text-gray-300">
                   Already have an account?{" "}
                   <button
+                    onClick={() => navigate("/")}
                     type="button"
                     className="font-semibold text-[#c3a6ff] hover:underline"
                   >
