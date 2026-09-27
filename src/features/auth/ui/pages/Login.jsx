@@ -62,8 +62,7 @@ const Login = () => {
           <div className="mt-3 text-center">
 
             <h1 className="text-[16px] font-bold tracking-tight">
-              Synthetix AI
-            </h1>
+              team-sync           </h1>
 
             <p className="mt-[2px] text-[9px] text-[#d0c9d8]">
               Sign in to your workspace

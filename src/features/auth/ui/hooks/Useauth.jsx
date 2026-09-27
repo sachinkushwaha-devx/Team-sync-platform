@@ -18,8 +18,12 @@ export const useAuth = () => {
     console.log("Register Data:", data);
   };
 
-  const onLoginSubmit = (data) => {
-    dispatch(loginEmployee(data));
+  const onLoginSubmit = async (data) => {
+    const resultAction = await dispatch(loginEmployee(data));
+
+    if (loginEmployee.fulfilled.match(resultAction)) {
+      navigate("/home");
+    }
   };
 
   return {

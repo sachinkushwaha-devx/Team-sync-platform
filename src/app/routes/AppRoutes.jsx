@@ -6,33 +6,46 @@ import AuthLayout from '../layouts/AuthLayout';
 import DashboardLayout from '../layouts/DashboardLayout';
 import Home from '../../features/dashboard/ui/pages/Home';
 import Login from '../../features/auth/ui/pages/Login';
+import PublicRoute from '../protectedRoutes/PublicRoute';
+import ProtectedRoute from '../protectedRoutes/ProtectedRoute';
 
 const AppRoutes = () => {
-
     let router = createBrowserRouter([
         {
             path: "/",
-            element:<AuthLayout />,
+            element: <PublicRoute />,
             children:[
                 {
-                    path:"",
-                    element: <Login />
+                    path : "",
+                    element : <AuthLayout />,
+                    children: [
+                        {
+                            path: "",
+                            element: <Login />
+                        },
+                        {
+                            path: "register",
+                            element: <Register />
+                        },
+                    ],
                 },
-                {
-                    path:"register",
-                    element: <Register /> 
-                }
-            ]
+            ],
         },
         {
             path:'/home',
-            element:<DashboardLayout />,
+            element: <ProtectedRoute />,
             children:[
                 {
-                path:"",
-                element:<Home />
-            },
-        ],
+                    path: "",
+                    element: <DashboardLayout />,
+                    children: [
+                        {
+                            path: "",
+                            element: <Home />
+                        },
+                    ],
+                },
+            ],
         },
     ]);
 

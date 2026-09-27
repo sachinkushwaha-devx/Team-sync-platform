@@ -66,7 +66,7 @@ function Register() {
 
               {/* Logo */}
               <div className="text-sm font-bold tracking-tight sm:text-base">
-                Synthetix AI
+                team-sync
               </div>
 
               {/* Marketing content */}
@@ -370,7 +370,7 @@ function Register() {
         <footer className="flex min-h-[58px] flex-col justify-center gap-3 border-t border-[#27252b] bg-[#111014] px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
 
           <div className="text-sm font-bold">
-            Synthetix AI
+            team-sync
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-[8px] text-gray-300">
@@ -381,7 +381,7 @@ function Register() {
           </div>
 
           <p className="text-[8px] text-gray-300">
-            © 2024 Synthetix AI. Enterprise Intelligence Platforms.
+            © 2024 team-sync. Enterprise Intelligence Platforms.
           </p>
 
         </footer>
