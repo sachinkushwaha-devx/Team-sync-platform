@@ -4,7 +4,7 @@ export let ThemeSlice = createSlice({
     name: "theme",
     initialState: {
 
-        mode: localStorage.getItem("theme"),
+        mode: localStorage.getItem("theme")|| 'dark'
     },
     reducers:{
         toggleTheme: (state)=>{

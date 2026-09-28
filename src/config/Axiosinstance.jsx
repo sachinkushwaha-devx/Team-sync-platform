@@ -11,9 +11,19 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.response.use(
   (response) => response,
-  (error) => {
-    console.error('Axios Error:', error.response?.data || error.message);
-    return Promise.reject(error);
+  async (error) => {
+    let originalReq = error.config;
+    if(error.response.status === 401 && !originalReq._retry){
+      originalReq._retry = true;
+      try{
+        await axiosInstance.get('/auth/get-accessToken')
+        return axiosInstance(originalReq)
+
+      } catch(error){
+        window.location.href = "/";
+        return Promise.reject(error);
+      }
+    }
   }
 );
 
