@@ -1,22 +1,16 @@
-import React from "react";
 import {
   User,
   Mail,  
   LockKeyhole,
   Check,
-  ArrowRight,
 } from "lucide-react";
 import { useAuth } from "../hooks/Useauth.jsx";
 
 function Register() {
-  const { register, handleSubmit, watch, errors, onRegisterSubmit, navigate
+  const { register, handleSubmit, watch, errors, authError, onRegisterSubmit, navigate
 
    } = useAuth();
   const password = watch("password", "");
-
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
-  };
 
   const passwordStrength = () => {
     if (!password) return 0;
@@ -134,6 +128,11 @@ function Register() {
                 onSubmit={handleSubmit(onRegisterSubmit)}
                 className="space-y-4"
               >
+                {authError && (
+                  <p role="alert" className="text-[10px] text-red-400">
+                    {authError}
+                  </p>
+                )}
 
                 {/* Full Name */}
                 <div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Cloud,
   GitBranch,
@@ -9,7 +9,7 @@ import {
 import { useAuth } from "../hooks/Useauth.jsx";
 
 const Login = () => {
-  const { register, handleSubmit, errors, onLoginSubmit, navigate } = useAuth();
+  const { register, handleSubmit, errors, authError, onLoginSubmit, navigate } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -113,6 +113,11 @@ const Login = () => {
             onSubmit={handleSubmit(onLoginSubmit)}
             className="space-y-[16px]"
           >
+            {authError && (
+              <p role="alert" className="text-[9px] text-red-400">
+                {authError}
+              </p>
+            )}
 
             {/* Email */}
             <div>

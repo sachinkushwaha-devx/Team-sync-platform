@@ -21,6 +21,23 @@ export const loginEmployee = createAsyncThunk(
   }
 );
 
+export const registerEmployee = createAsyncThunk(
+  'auth/register',
+  async (employeeData, thunkApi) => {
+    try {
+      const res = await axiosInstance.post('/auth/register', employeeData);
+      return res.data?.data ?? res.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(
+        error.response?.data || {
+          message: error.message,
+          code: error.code,
+        }
+      );
+    }
+  }
+);
+
 export const currentLoggedEmployee = createAsyncThunk(
   'auth/me',
   async (_, thunkApi) => {

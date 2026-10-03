@@ -1,4 +1,3 @@
-import React from 'react'
 import Register from '../../features/auth/ui/pages/Register';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -8,6 +7,7 @@ import Home from '../../features/dashboard/ui/pages/Home';
 import Login from '../../features/auth/ui/pages/Login';
 import PublicRoute from '../protectedRoutes/PublicRoute';
 import ProtectedRoute from '../protectedRoutes/ProtectedRoute';
+import { EmployeeRoutes } from './EmployeeRoutes';
 
 const AppRoutes = () => {
     let router = createBrowserRouter([
@@ -43,6 +43,7 @@ const AppRoutes = () => {
                             path: "",
                             element: <Home />
                         },
+                        ...EmployeeRoutes,
                     ],
                 },
             ],

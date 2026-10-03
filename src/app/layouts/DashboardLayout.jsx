@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import AsideNav from '../../features/dashboard/ui/components/AsideNav';
