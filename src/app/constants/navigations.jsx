@@ -1,23 +1,82 @@
 import {
-  CalendarDays,
+  Building,
+  ChartArea,
+  File,
   LayoutDashboard,
-  ListTodo,
-  MessageCircle,
-  Users,
-  UserRound,
+  List,
+  PersonStanding,
+  Presentation,
+  Settings,
+  UserPen,
 } from "lucide-react";
 
-const sharedNavigation = [
-  { path: "/home", title: "Dashboard", icon: LayoutDashboard },
-  { path: "/home/my-task", title: "My Tasks", icon: ListTodo },
-  { path: "/home/chat", title: "Chat", icon: MessageCircle },
-  { path: "/home/attendance", title: "Attendance", icon: CalendarDays },
-  { path: "/home/profile", title: "Profile", icon: UserRound },
+export let employeeNavigation = [
+  {
+    path: "/home",
+    title: "Dashboard",
+    icon: <LayoutDashboard />,
+  },
+  {
+    path: "/home/myTask",
+    title: "My-Task",
+    icon: <List />,
+  },
+  {
+    path: "/home/chat",
+    title: "Chats",
+    icon: <ChartArea />,
+  },
+  {
+    path: "/home/attendance",
+    title: "Attendance",
+    icon: <Presentation />,
+  },
+  {
+    path: "/home/profile",
+    title: "Profile",
+    icon: <UserPen />,
+  },
+  {
+    path: "/home/setting",
+    title: "Settings",
+    icon: <Settings />,
+  },
 ];
 
-export const adminNavigation = [
-  sharedNavigation[0],
-  { path: "/home/employees", title: "Employees", icon: Users },
-  ...sharedNavigation.slice(1),
+export let adminNavigation = [
+  {
+    path: "/home",
+    title: "Dashboard",
+    icon: <LayoutDashboard />,
+  },
+  {
+    path: "/home/task",
+    title: "Task",
+    icon: <List />,
+  },
+  {
+    path: "/home/chat",
+    title: "Chats",
+    icon: <ChartArea />,
+  },
+  {
+    path: "/home/department",
+    title: "Departments",
+    icon: <Building />,
+  },
+  {
+    path: "/home/employee",
+    title: "Employee",
+    icon: <PersonStanding />,
+  },
+  {
+    path: "/home/document",
+    title: "Documents",
+    icon: <File />,
+  },
+  {
+    path: "/home/setting",
+    title: "Settings",
+    icon: <Settings />,
+  },
 ];
-export const employeeNavigation = sharedNavigation; 
