@@ -14,32 +14,32 @@ export let employeeNavigation = [
   {
     path: "/home",
     title: "Dashboard",
-    icon: <LayoutDashboard />,
+    icon: LayoutDashboard,
   },
   {
-    path: "/home/myTask",
+    path: "/home/my-task",
     title: "My-Task",
-    icon: <List />,
+    icon: List,
   },
   {
     path: "/home/chat",
     title: "Chats",
-    icon: <ChartArea />,
+    icon: ChartArea,
   },
   {
     path: "/home/attendance",
     title: "Attendance",
-    icon: <Presentation />,
+    icon: Presentation,
   },
   {
     path: "/home/profile",
     title: "Profile",
-    icon: <UserPen />,
+    icon: UserPen,
   },
   {
     path: "/home/setting",
     title: "Settings",
-    icon: <Settings />,
+    icon: Settings,
   },
 ];
 
@@ -47,36 +47,36 @@ export let adminNavigation = [
   {
     path: "/home",
     title: "Dashboard",
-    icon: <LayoutDashboard />,
+    icon: LayoutDashboard,
   },
   {
-    path: "/home/task",
+    path: "/home/my-task",
     title: "Task",
-    icon: <List />,
+    icon: List,
   },
   {
     path: "/home/chat",
     title: "Chats",
-    icon: <ChartArea />,
+    icon: ChartArea,
+  },
+  {
+    path: "/home/employees",
+    title: "Employee",
+    icon: PersonStanding,
   },
   {
     path: "/home/department",
     title: "Departments",
-    icon: <Building />,
-  },
-  {
-    path: "/home/employee",
-    title: "Employee",
-    icon: <PersonStanding />,
+    icon: Building,
   },
   {
     path: "/home/document",
     title: "Documents",
-    icon: <File />,
+    icon: File,
   },
   {
     path: "/home/setting",
     title: "Settings",
-    icon: <Settings />,
+    icon: Settings,
   },
 ];

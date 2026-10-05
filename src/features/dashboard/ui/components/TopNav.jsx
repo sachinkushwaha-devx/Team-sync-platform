@@ -21,16 +21,41 @@ const TopNav = () => {
           placeholder="Search workspace.."
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex items-center gap-2">
         {mode === "light" ? (
-          <Moon onClick={handleThemeChange} size={23} />
+          <button
+            type="button"
+            aria-label="Switch to dark mode"
+            onClick={handleThemeChange}
+            className="cursor-pointer rounded-lg p-2 transition hover:bg-(--bg-hover)"
+          >
+            <Moon size={23} />
+          </button>
         ) : (
-          <Lightbulb onClick={handleThemeChange} size={23} />
+          <button
+            type="button"
+            aria-label="Switch to light mode"
+            onClick={handleThemeChange}
+            className="cursor-pointer rounded-lg p-2 transition hover:bg-(--bg-hover)"
+          >
+            <Lightbulb size={23} />
+          </button>
         )}
 
-        <Bell size={23} />
-        <Menu size={23} />
-              <button onClick={handleThemeChange}>change theme</button>
+        <button
+          type="button"
+          aria-label="Notifications"
+          className="cursor-pointer rounded-lg p-2 transition hover:bg-(--bg-hover)"
+        >
+          <Bell size={23} />
+        </button>
+        <button
+          type="button"
+          aria-label="Menu"
+          className="cursor-pointer rounded-lg p-2 transition hover:bg-(--bg-hover)"
+        >
+          <Menu size={23} />
+        </button>
       </div>
     </div>
   );
