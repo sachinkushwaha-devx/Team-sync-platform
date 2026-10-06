@@ -3,12 +3,17 @@ import Attendance from '../../features/employees module/Attendance/ui/pages/Atte
 import MyTask from '../../features/employees module/MyTask/ui/pages/MyTask'
 import Profile from '../../features/employees module/profile/ui/pages/Profile'
 import Employee from '../../features/admin module/employees/ui/pages/Employee.jsx'
+import AddEmployee from '../../features/admin module/employees/ui/pages/AddEmployee.jsx'
 import WorkspaceSection from '../../features/dashboard/ui/pages/WorkspaceSection'
 
 export let EmployeeRoutes = [
     {
         path: "employees",
         element: <Employee />,
+    },
+    {
+        path: "add-employee",
+        element: <AddEmployee />,
     },
     {
         path: "my-task",

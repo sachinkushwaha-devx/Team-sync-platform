@@ -8,8 +8,8 @@ import {
 const AsideNav = () => {
   let { employee } = useSelector((store) => store.auth);
 
-  let navigations =
-    employee?.role === "admin" ? adminNavigation : employeeNavigation;
+  let isAdmin = employee?.role?.toLowerCase() === "admin";
+  let navigations = isAdmin ? adminNavigation : employeeNavigation;
 
   return (
     <div>

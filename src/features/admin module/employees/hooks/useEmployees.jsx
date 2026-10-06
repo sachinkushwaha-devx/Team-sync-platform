@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllEmployees } from "../api/EmployeeApis.jsx";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export let useEmployee = () => {
+  let navigate = useNavigate();
   const [page, setPage] = useState(1);
   const [filters, setFilters] = useState({
     search: "",

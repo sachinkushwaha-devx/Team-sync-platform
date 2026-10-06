@@ -8,6 +8,7 @@ export let adminRoutes = [
   {
     path: "/home/employee",
     element: <Employee />,
+    
   },
   {
     path: "/home/add-employee",
