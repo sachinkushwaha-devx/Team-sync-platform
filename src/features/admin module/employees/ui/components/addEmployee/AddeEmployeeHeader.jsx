@@ -1,4 +1,6 @@
-const AddEmployeeHeader = () => {
+const AddEmployeeHeader = ({ isEditing = false }) => {
+    const pageTitle = isEditing ? "Update Employee" : "Add Employee";
+
     return (
       <div className="mb-8">
   
@@ -9,13 +11,13 @@ const AddEmployeeHeader = () => {
           <span>›</span>
   
           <span className="font-semibold text-[var(--text-primary)]">
-            Add New Employee
+            {isEditing ? "Update Employee" : "Add New Employee"}
           </span>
   
         </div>
   
         <h1 className="text-6xl font-bold mt-4 text-[var(--text-primary)]">
-          Add Employee
+          {pageTitle}
         </h1>
   
         <p className="mt-3 text-xl text-[var(--text-secondary)]">

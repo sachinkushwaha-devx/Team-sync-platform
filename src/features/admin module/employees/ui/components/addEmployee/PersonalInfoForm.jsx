@@ -1,4 +1,5 @@
-import { FormInput, User } from "lucide-react";
+import { User } from "lucide-react";
+import FormInput from "./FormInput";
 import UploadPhoto from "./UploadPhoto";
 import FormTextarea from "./FormTextarea";
 
@@ -67,6 +68,7 @@ const PersonalInfoForm = ({
               placeholder="Tell us about employee..."
               register={register}
               name="bio"
+              errors={errors}
             />
 
           </div>

@@ -32,8 +32,8 @@ const EmploymentDetailsForm = ({
           </label>
 
           <select
-          
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 outline-none"
+            {...register("department")}
+            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
           >
             <option value="">
               Select Department
@@ -67,8 +67,8 @@ const EmploymentDetailsForm = ({
           </label>
 
           <select
-          
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 outline-none"
+            {...register("role")}
+            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
           >
             <option value="">
               Select Role
@@ -95,8 +95,8 @@ const EmploymentDetailsForm = ({
 
           <input
             type="date"
-           
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 outline-none"
+            {...register("joiningDate")}
+            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
           />
 
         </div>
@@ -115,7 +115,7 @@ const EmploymentDetailsForm = ({
               <input
                 type="radio"
                 value="active"
-              
+                {...register("status")}
               />
 
               Active
@@ -127,7 +127,7 @@ const EmploymentDetailsForm = ({
               <input
                 type="radio"
                 value="inactive"
-               
+                {...register("status")}
               />
 
               Inactive

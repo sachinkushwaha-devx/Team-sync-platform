@@ -1,7 +1,10 @@
+import { useState } from "react";
 import EmployeeRow from "./EmployeeRow";
 
 
 const EmployeeTable = ({ employees = [] }) => {
+  const [openActionsEmployeeId, setOpenActionsEmployeeId] = useState(null);
+
   return (
     <div className="overflow-x-auto">
 
@@ -45,6 +48,13 @@ const EmployeeTable = ({ employees = [] }) => {
             <EmployeeRow
               key={employee._id}
               employee={employee}
+              isActionsOpen={openActionsEmployeeId === employee._id}
+              onToggleActions={() =>
+                setOpenActionsEmployeeId((openId) =>
+                  openId === employee._id ? null : employee._id
+                )
+              }
+              onCloseActions={() => setOpenActionsEmployeeId(null)}
             />
           ))}
 
