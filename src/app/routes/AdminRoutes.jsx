@@ -6,24 +6,23 @@ import Task from "../../features/admin module/tasks/ui/pages/Task";
 
 export let adminRoutes = [
   {
-    path: "/home/employee",
+    path: 'employee',
     element: <Employee />,
-    
   },
   {
-    path: "/home/add-employee",
+    path: 'add-employee',
     element: <AddEmployee />,
   },
   {
-    path: "/home/task",
+    path: 'task',
     element: <Task />,
   },
   {
-    path: "/home/department",
+    path: 'department',
     element: <Department />,
   },
   {
-    path: "/home/document",
+    path: 'document',
     element: <Document />,
   },
 ];

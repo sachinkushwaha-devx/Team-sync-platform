@@ -4,11 +4,12 @@ import {
   adminNavigation,
   employeeNavigation,
 } from "../../../../app/constants/navigations";
+import { getEmployeeRole } from "../../../auth/ui/hooks/state/auth/authHelpers";
 
 const AsideNav = () => {
   let { employee } = useSelector((store) => store.auth);
 
-  let isAdmin = employee?.role?.toLowerCase() === "admin";
+  let isAdmin = getEmployeeRole(employee) === "admin";
   let navigations = isAdmin ? adminNavigation : employeeNavigation;
 
   return (

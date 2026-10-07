@@ -50,7 +50,7 @@ export let adminNavigation = [
     icon: LayoutDashboard,
   },
   {
-    path: "/home/my-task",
+    path: "/home/task",
     title: "Task",
     icon: List,
   },
@@ -60,7 +60,7 @@ export let adminNavigation = [
     icon: ChartArea,
   },
   {
-    path: "/home/employees",
+    path: "/home/employee",
     title: "Employee",
     icon: PersonStanding,
   },

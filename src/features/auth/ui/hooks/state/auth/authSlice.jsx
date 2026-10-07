@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { currentLoggedEmployee, loginEmployee, registerEmployee } from './authAction';
+import { getEmployeeFromAuthPayload } from './authHelpers';
 
 const getStoredEmployee = () => {
   try {
@@ -48,7 +49,7 @@ const authSlice = createSlice({
       })
       .addCase(loginEmployee.fulfilled, (state, action) => {
         state.isLoading = false;
-        const employee = action.payload?.employee ?? action.payload?.data?.employee ?? action.payload?.data ?? action.payload;
+        const employee = getEmployeeFromAuthPayload(action.payload);
         state.employee = employee;
         state.error = null;
         saveEmployee(employee);
@@ -74,7 +75,7 @@ const authSlice = createSlice({
       })
       .addCase(currentLoggedEmployee.fulfilled, (state, action) => {
         state.isLoading = false;
-        const employee = action.payload?.employee ?? action.payload?.data?.employee ?? action.payload?.data ?? action.payload;
+        const employee = getEmployeeFromAuthPayload(action.payload);
         state.employee = employee;
         saveEmployee(employee);
       })
@@ -89,4 +90,3 @@ const authSlice = createSlice({
 
 export const { addEmployee, removeEmployee } = authSlice.actions;
 export default authSlice.reducer;
-

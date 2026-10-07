@@ -33,7 +33,7 @@ const AddEmployee = () => {
       joiningDate: "",
       status: "active",
       avatar: "",
-      password: "12345678",
+      password: "",
     },
   });
 

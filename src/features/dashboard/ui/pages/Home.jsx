@@ -1,7 +1,10 @@
 const Home = () => {
   return (
-    <div>
-      <h1>this is my dashboard home page</h1>
+    <div className="space-y-2">
+      <h1 className="text-3xl font-bold text-(--text-primary)">Employee Dashboard</h1>
+      <p className="text-(--text-secondary)">
+        View your tasks, attendance, and profile from your employee workspace.
+      </p>
     </div>
   );
 };

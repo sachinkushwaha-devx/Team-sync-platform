@@ -62,6 +62,28 @@ const PersonalInfoForm = ({
           </div>
 
           <div className="mt-6">
+            <FormInput
+              label="Temporary Password *"
+              placeholder="Create a password for the employee"
+              type="password"
+              autoComplete="new-password"
+              register={register}
+              name="password"
+              errors={errors}
+              registerOptions={{
+                required: "A password is required so the employee can sign in",
+                minLength: {
+                  value: 8,
+                  message: "Password must be at least 8 characters",
+                },
+              }}
+            />
+            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+              Share this temporary password with the employee securely.
+            </p>
+          </div>
+
+          <div className="mt-6">
 
             <FormTextarea
               label="Bio / About"
