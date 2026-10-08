@@ -1,14 +1,34 @@
-import { Bell, Lightbulb, Menu, Moon, Search } from "lucide-react";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Bell, Lightbulb, LogOut, Menu, Moon, Search } from "lucide-react";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../../../../shared/state/ThemeSlice.jsx';
+import { removeEmployee } from '../../../auth/ui/hooks/state/auth/authSlice';
+import { axiosInstance } from '../../../../config/Axiosinstance';
 
 const TopNav = () => {
   let dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   let { mode } = useSelector((store) => store.theme);
 
   let handleThemeChange = () => {
     dispatch(toggleTheme());
+  };
+
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+    try {
+      await axiosInstance.post('/auth/logout');
+    } catch (error) {
+      console.error('Logout request failed:', error.response?.data || error.message);
+      window.alert('Server se logout confirm nahi ho saka. Aapke device par session clear kar diya gaya hai.');
+    } finally {
+      dispatch(removeEmployee());
+      navigate('/', { replace: true });
+      setIsLoggingOut(false);
+    }
   };
 
   return (
@@ -55,6 +75,15 @@ const TopNav = () => {
           className="cursor-pointer rounded-lg p-2 transition hover:bg-(--bg-hover)"
         >
           <Menu size={23} />
+        </button>
+        <button
+          type="button"
+          onClick={handleLogout}
+          disabled={isLoggingOut}
+          className="flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 text-(--text-primary) transition hover:bg-(--bg-hover) disabled:cursor-wait disabled:opacity-60"
+        >
+          <LogOut size={20} />
+          <span>{isLoggingOut ? 'Logging out...' : 'Log out'}</span>
         </button>
       </div>
     </div>
