@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { getAllowedOrigins } from "./config.js";
 import authRoutes from "./routes/auth.js";
+import employeeRoutes from "./routes/employees.js";
 
 export const createApp = () => {
   const app = express();
@@ -29,6 +30,7 @@ export const createApp = () => {
     res.json({ success: true, status: "ok" });
   });
   app.use("/api/auth", authRoutes);
+  app.use("/api/employee", employeeRoutes);
 
   app.use((_req, res) => {
     res.status(404).json({ success: false, message: "Route not found" });

@@ -28,6 +28,34 @@ const userSchema = new mongoose.Schema(
       default: "employee",
       required: true,
     },
+    bio: {
+      type: String,
+      trim: true,
+      maxlength: 2000,
+      default: "",
+    },
+    department: {
+      type: String,
+      trim: true,
+      maxlength: 100,
+      default: "",
+    },
+    status: {
+      type: String,
+      enum: ["active", "inactive"],
+      default: "active",
+      required: true,
+    },
+    avatar: {
+      type: String,
+      trim: true,
+      maxlength: 2048,
+      default: "",
+    },
+    joiningDate: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true }
 );

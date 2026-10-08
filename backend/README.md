@@ -1,7 +1,7 @@
 # Team Sync API
 
-This Express API implements the frontend's `/api/auth/register`, `/api/auth/login`,
-`/api/auth/me`, `/api/auth/get-accessToken`, and `/api/auth/logout` routes.
+This Express API implements the frontend's authentication routes and the admin-only
+`/api/employee` listing, create, update, and delete routes.
 
 ## Local setup
 

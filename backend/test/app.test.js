@@ -29,6 +29,16 @@ test("health endpoint reports the API is ready", async () => {
   assert.deepEqual(await response.json(), { success: true, status: "ok" });
 });
 
+test("employee API requires an authenticated administrator", async () => {
+  const response = await fetch(`${baseUrl}/api/employee`);
+
+  assert.equal(response.status, 401);
+  assert.deepEqual(await response.json(), {
+    success: false,
+    message: "Authentication required",
+  });
+});
+
 test("preflight accepts the local Vite origin with credentials", async () => {
   const response = await fetch(`${baseUrl}/api/auth/login`, {
     method: "OPTIONS",

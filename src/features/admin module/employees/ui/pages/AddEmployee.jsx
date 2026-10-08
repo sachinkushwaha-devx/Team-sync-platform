@@ -10,7 +10,9 @@ import EmploymentDetailsForm from "../components/addEmployee/EmploymentDetailsFo
 import FormActions from "../components/addEmployee/FormActions";
 import PersonalInfoForm from "../components/addEmployee/PersonalInfoForm";
 import { createEmployee } from "../../api/EmployeeApis";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useQueryClient } from "@tanstack/react-query";
 
 
 
@@ -22,7 +24,7 @@ const AddEmployee = () => {
     watch,
     setValue,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
       name: "",
@@ -36,17 +38,22 @@ const AddEmployee = () => {
       password: "",
     },
   });
+  const [submitError, setSubmitError] = useState("");
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   // SUBMIT
   const onSubmit = async (data) => {
-    // console.log("FORM DATA =>", data);
+    setSubmitError("");
     try {
-      let res = await createEmployee(data);
-      console.log(res, "in ui");
-      alert("employee created");
+      await createEmployee(data);
+      await queryClient.invalidateQueries({ queryKey: ["employees"] });
       reset();
+      navigate("/home/employee");
     } catch (error) {
-      console.log("error in api", error);
+      setSubmitError(
+        error.response?.data?.message ?? error.message ?? "Could not create employee."
+      );
     }
   };
 
@@ -70,7 +77,12 @@ const AddEmployee = () => {
           <EmploymentDetailsForm register={register} errors={errors} />
 
           {/* ACTIONS */}
-          <FormActions />
+          {submitError && (
+            <p role="alert" className="mt-6 text-right text-red-500">
+              {submitError}
+            </p>
+          )}
+          <FormActions isSubmitting={isSubmitting} />
         </form>
       </div>
     </div>
