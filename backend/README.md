@@ -21,8 +21,10 @@ Create a Render Web Service for this repository with **Root Directory** `backend
 environment variables in Render's Environment settings. Set `FRONTEND_URL` to
 `https://team-sync-platform.vercel.app` and `NODE_ENV` to `production`.
 
-After deployment, set `VITE_API_BASE_URL` in Vercel to the Render service URL plus
-`/api`, then redeploy the frontend.
+The root `vercel.json` proxies `/api/*` requests to the Render service so browser
+authentication cookies remain on the frontend's own domain. In Vercel, set
+`VITE_API_BASE_URL` to `/api` (or leave it unset to use the frontend default), then
+redeploy the frontend. Keep `FRONTEND_URL` set to the exact production frontend URL.
 
 New public registrations are always employees. Do not add a client-controlled role
 field to registration; provision an administrator manually through a trusted database

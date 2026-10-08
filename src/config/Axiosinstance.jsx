@@ -5,7 +5,7 @@ export const SESSION_EXPIRED_EVENT = "auth:session-expired";
 export const axiosInstance = axios.create({
   baseURL:
     import.meta.env.VITE_API_BASE_URL ||
-    'https://team-sync-backend-n78w.onrender.com/api',
+    '/api',
   withCredentials: true,
   timeout: 15000,
   headers: {
