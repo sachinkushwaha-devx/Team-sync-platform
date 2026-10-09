@@ -8,6 +8,7 @@ import { getEmployeeRole } from "../../../auth/ui/hooks/state/auth/authHelpers";
 
 const AsideNav = () => {
   let { employee } = useSelector((store) => store.auth);
+  let { mode } = useSelector((store) => store.theme);
 
   let isAdmin = getEmployeeRole(employee) === "admin";
   let navigations = isAdmin ? adminNavigation : employeeNavigation;
@@ -22,7 +23,7 @@ const AsideNav = () => {
             aria-hidden="true"
             className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
           />
-          <h1 className="whitespace-nowrap text-2xl font-semibold text-[#CAB8F9] lg:text-3xl">Team-sync</h1>
+          <h1 className={`whitespace-nowrap text-2xl font-semibold lg:text-3xl ${mode === "light" ? "text-(--text-primary)" : "text-[#CAB8F9]"}`}>Team-sync</h1>
         </div>
         <p className="hidden whitespace-nowrap text-sm text-(--text-secondary) lg:block">
           Enterprise workspace
