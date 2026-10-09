@@ -5,7 +5,7 @@ const EmploymentDetailsForm = ({
   errors,
 }) => {
   return (
-    <div className="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-3xl p-8 mt-8">
+    <div className="mt-8 rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-8">
 
       {/* TITLE */}
       <div className="flex items-center gap-4 pb-6 border-b border-[var(--border-color)]">
@@ -15,14 +15,14 @@ const EmploymentDetailsForm = ({
           className="text-[var(--brand-color)]"
         />
 
-        <h2 className="text-4xl font-bold text-[var(--text-primary)]">
+        <h2 className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
           Employment Details
         </h2>
 
       </div>
 
       {/* FORM */}
-      <div className="grid grid-cols-2 gap-6 mt-8">
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
 
         {/* DEPARTMENT */}
         <div>

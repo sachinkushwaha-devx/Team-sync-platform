@@ -13,15 +13,23 @@ const AsideNav = () => {
   let navigations = isAdmin ? adminNavigation : employeeNavigation;
 
   return (
-    <div>
-      <div className="flex flex-col gap-1 p-4">
-        <h1 className="whitespace-nowrap text-3xl font-semibold text-[#CAB8F9]">team-sync</h1>
-        <p className="whitespace-nowrap text-sm text-(--text-secondary)">
+    <div className="flex min-w-0 flex-col gap-2 lg:gap-4">
+      <div className="flex items-center justify-between gap-4 px-2 py-1 sm:px-4 lg:block lg:py-0">
+        <div className="flex items-center gap-2.5">
+          <img
+            src="/team-sync-logo.svg"
+            alt=""
+            aria-hidden="true"
+            className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
+          />
+          <h1 className="whitespace-nowrap text-2xl font-semibold text-[#CAB8F9] lg:text-3xl">team-sync</h1>
+        </div>
+        <p className="hidden whitespace-nowrap text-sm text-(--text-secondary) lg:block">
           Enterprise workspace
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <nav aria-label="Main navigation" className="flex min-w-0 gap-1 overflow-x-auto lg:flex-col lg:gap-3 lg:overflow-visible">
         {navigations.map((route) => {
           return (
             <NavigationTab
@@ -32,7 +40,7 @@ const AsideNav = () => {
             />
           );
         })}
-      </div>
+      </nav>
     </div>
   );
 };

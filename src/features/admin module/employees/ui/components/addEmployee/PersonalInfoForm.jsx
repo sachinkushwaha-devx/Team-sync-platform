@@ -12,7 +12,7 @@ const PersonalInfoForm = ({
   watch,
 }) => {
   return (
-    <div className="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-3xl p-8">
+    <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-8">
 
       {/* TITLE */}
       <div className="flex items-center gap-4 pb-6 border-b border-[var(--border-color)]">
@@ -22,14 +22,14 @@ const PersonalInfoForm = ({
           className="text-[var(--brand-color)]"
         />
 
-        <h2 className="text-4xl font-bold text-[var(--text-primary)]">
+        <h2 className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
           Personal Information
         </h2>
 
       </div>
 
       {/* CONTENT */}
-      <div className="grid grid-cols-[220px_1fr] gap-10 mt-8">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[13.75rem_minmax(0,1fr)] lg:gap-10">
 
         {/* IMAGE */}
         <UploadPhoto
@@ -40,7 +40,7 @@ const PersonalInfoForm = ({
         {/* FORM */}
         <div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
 
             <FormInput
               label="Full Name *"

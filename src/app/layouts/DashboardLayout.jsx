@@ -33,18 +33,16 @@ const DashboardLayout = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className='h-screen grid grid-cols-[1fr_7fr]'>
-      <div className='border-r border-gray-500 px-2 py-4'>
+    <div className="flex min-h-dvh flex-col lg:grid lg:h-dvh lg:min-h-0 lg:grid-cols-[clamp(14rem,18vw,18rem)_minmax(0,1fr)]">
+      <div className="min-w-0 border-b border-gray-500 px-2 py-2 lg:overflow-y-auto lg:border-b-0 lg:border-r lg:py-4">
         <AsideNav />
-        </div>
-      <div className='flex flex-col gap-5  px-6 py-4 overflow-auto' >
-       <TopNav />
-        <div className= 'h-full overflow-auto'>
-              <Outlet />
-        </div>
-       
       </div>
-   
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-4 px-[var(--page-gutter)] py-4 lg:gap-5 lg:overflow-y-auto">
+        <TopNav />
+        <div className="dashboard-content-scroll min-h-0 min-w-0 flex-1 lg:overflow-auto">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 };

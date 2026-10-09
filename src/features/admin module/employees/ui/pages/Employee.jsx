@@ -29,7 +29,7 @@ const Employee = () => {
   }
 
   return (
-    <div className=" bg-[var(--bg-main)] p-8">
+    <div className="bg-[var(--bg-main)] p-[var(--page-gutter)]">
       <div className=" mx-auto">
         {/* HEADER */}
         <EmployeeHeader />

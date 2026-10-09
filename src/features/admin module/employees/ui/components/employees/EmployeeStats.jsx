@@ -5,7 +5,7 @@ const EmployeeStats = ({ employees = [] }) => {
   const activeEmployees = employees.filter((emp) => emp.status === "active");
 
   return (
-    <div className="grid grid-cols-4 gap-6 mt-8">
+    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 sm:gap-6">
       <StatCard
         title="Total Employees"
         value={employees.length}

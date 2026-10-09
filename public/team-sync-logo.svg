@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="tile" x1="5" y1="4" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7567F8"/>
+      <stop offset="1" stop-color="#A855F7"/>
+    </linearGradient>
+    <linearGradient id="lines" x1="10" y1="12" x2="38" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E9D5FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="44" height="44" rx="14" fill="#17142A"/>
+  <rect x="2.75" y="2.75" width="42.5" height="42.5" rx="13.25" stroke="url(#tile)" stroke-opacity=".75" stroke-width="1.5"/>
+  <path d="M17 16.5 12.5 24m18-7.5 5 7.5m-18 7.5h13" stroke="url(#lines)" stroke-linecap="round" stroke-width="2.6"/>
+  <circle cx="18" cy="13.5" r="4" fill="#C4B5FD" stroke="#17142A" stroke-width="1.8"/>
+  <circle cx="10.5" cy="27" r="4" fill="#A78BFA" stroke="#17142A" stroke-width="1.8"/>
+  <circle cx="37.5" cy="27" r="4" fill="#A78BFA" stroke="#17142A" stroke-width="1.8"/>
+  <circle cx="24" cy="34.5" r="4" fill="#E9D5FF" stroke="#17142A" stroke-width="1.8"/>
+  <path d="M29 11.5h6v6" stroke="#C4B5FD" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <path d="M35 11.5a15 15 0 0 1 3.8 9.9" stroke="#C4B5FD" stroke-linecap="round" stroke-width="2"/>
+</svg>

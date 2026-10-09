@@ -13,7 +13,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#100e13] text-white">
+    <div className="login-page min-h-dvh overflow-hidden bg-[#100e13] text-white">
 
       {/* Background */}
       <div className="fixed inset-0 overflow-hidden">
@@ -41,10 +41,10 @@ const Login = () => {
 
       {/* ================= PAGE ================= */}
 
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center">
+      <div className="relative z-10 flex min-h-dvh flex-col items-center justify-center">
 
         {/* Login Card */}
-        <div className="w-[288px] rounded-lg bg-[#1b191e] px-[21px] pb-[23px] pt-[21px] shadow-[0_25px_70px_rgba(0,0,0,0.25)]">
+        <div className="mx-4 w-full max-w-[18rem] rounded-lg bg-[#1b191e] px-5 pb-6 pt-5 shadow-[0_1.5rem_4.375rem_rgba(0,0,0,0.25)]">
 
           {/* Logo */}
           <div className="flex justify-center">

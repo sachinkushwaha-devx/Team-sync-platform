@@ -28,16 +28,16 @@ function Register() {
   const strength = passwordStrength();
 
   return (
-    <main className="min-h-screen bg-[#0b0c0f] px-3 py-3 text-white sm:px-5 sm:py-4">
+    <main className="min-h-dvh bg-[#0b0c0f] px-3 py-3 text-white sm:px-5 sm:py-4">
 
       {/* Main outer frame */}
-      <div className="mx-auto flex min-h-[calc(100vh-24px)] max-w-[1350px] flex-col overflow-hidden rounded-[28px] border-[7px] border-[#aab1bc] bg-[#111014] shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+      <div className="mx-auto flex min-h-[calc(100svh-1.5rem)] max-w-[84.375rem] flex-col overflow-hidden rounded-[1.75rem] border-[0.4375rem] border-[#aab1bc] bg-[#111014] shadow-[0_0_3.125rem_rgba(0,0,0,0.5)]">
 
         {/* Content */}
         <div className="flex flex-1 flex-col lg:flex-row">
 
           {/* ================= LEFT SIDE ================= */}
-          <section className="relative min-h-[560px] overflow-hidden lg:w-[42%]">
+          <section className="relative min-h-[22rem] overflow-hidden lg:min-h-[35rem] lg:w-[42%]">
 
             {/* Abstract background */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_45%,#193d68_0%,#101d35_30%,#080e1d_70%,#111014_100%)]" />
@@ -56,7 +56,7 @@ function Register() {
             </div>
 
             {/* Left content */}
-            <div className="relative z-10 flex h-full min-h-[560px] flex-col p-5 sm:p-8">
+            <div className="relative z-10 flex h-full min-h-[22rem] flex-col p-5 sm:p-8 lg:min-h-[35rem]">
 
               {/* Logo */}
               <div className="text-sm font-bold tracking-tight sm:text-base">
