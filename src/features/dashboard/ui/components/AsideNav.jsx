@@ -22,7 +22,7 @@ const AsideNav = () => {
             aria-hidden="true"
             className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
           />
-          <h1 className="whitespace-nowrap text-2xl font-semibold text-[#CAB8F9] lg:text-3xl">team-sync</h1>
+          <h1 className="whitespace-nowrap text-2xl font-semibold text-[#CAB8F9] lg:text-3xl">Team-sync</h1>
         </div>
         <p className="hidden whitespace-nowrap text-sm text-(--text-secondary) lg:block">
           Enterprise workspace

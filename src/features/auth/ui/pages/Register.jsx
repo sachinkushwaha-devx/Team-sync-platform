@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "../hooks/Useauth.jsx";
 
-function Register() {
+function Register({ embedded = false }) {
   const { register, handleSubmit, watch, errors, authError, onRegisterSubmit, navigate
 
    } = useAuth();
@@ -28,16 +28,16 @@ function Register() {
   const strength = passwordStrength();
 
   return (
-    <main className="min-h-dvh bg-[#0b0c0f] px-3 py-3 text-white sm:px-5 sm:py-4">
+    <main className={`${embedded ? "auth-panel auth-panel--register relative bg-[#111014] p-[clamp(0.5rem,1.5vh,1rem)]" : "min-h-dvh bg-[#0b0c0f] px-3 py-3 sm:px-5 sm:py-4"} text-white`}>
 
       {/* Main outer frame */}
-      <div className="mx-auto flex min-h-[calc(100svh-1.5rem)] max-w-[84.375rem] flex-col overflow-hidden rounded-[1.75rem] border-[0.4375rem] border-[#aab1bc] bg-[#111014] shadow-[0_0_3.125rem_rgba(0,0,0,0.5)]">
+      <div className={`${embedded ? "auth-content w-full" : "min-h-[calc(100svh-1.5rem)] max-w-[84.375rem] rounded-[1.75rem] border-[0.4375rem] border-[#aab1bc] shadow-[0_0_3.125rem_rgba(0,0,0,0.5)]"} mx-auto flex flex-col overflow-hidden bg-[#111014]`}>
 
         {/* Content */}
         <div className="flex flex-1 flex-col lg:flex-row">
 
           {/* ================= LEFT SIDE ================= */}
-          <section className="relative min-h-[22rem] overflow-hidden lg:min-h-[35rem] lg:w-[42%]">
+          {!embedded && <section className="relative min-h-[22rem] overflow-hidden lg:min-h-[35rem] lg:w-[42%]">
 
             {/* Abstract background */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_45%,#193d68_0%,#101d35_30%,#080e1d_70%,#111014_100%)]" />
@@ -60,7 +60,7 @@ function Register() {
 
               {/* Logo */}
               <div className="text-sm font-bold tracking-tight sm:text-base">
-                team-sync
+                Team-sync
               </div>
 
               {/* Marketing content */}
@@ -103,11 +103,11 @@ function Register() {
                 </div>
               </div>
             </div>
-          </section>
+          </section>}
 
 
           {/* ================= RIGHT SIDE ================= */}
-          <section className="flex flex-1 items-center justify-center bg-[#121116] px-6 py-12 sm:px-12 lg:px-16">
+          <section className={`${embedded ? "px-[clamp(0.75rem,2.2vw,2rem)] py-[clamp(0.75rem,2vh,1.5rem)]" : "px-6 py-12 sm:px-12 lg:px-16"} flex flex-1 items-center justify-center bg-[#121116]`}>
 
             <div className="w-full max-w-[420px]">
 
@@ -117,7 +117,7 @@ function Register() {
                   Create your account
                 </h2>
 
-                <p className="mt-2 text-[11px] text-gray-300">
+                <p className="mt-2 text-xs text-gray-300">
                   Experience the future of collaborative data intelligence.
                 </p>
               </div>
@@ -129,14 +129,14 @@ function Register() {
                 className="space-y-4"
               >
                 {authError && (
-                  <p role="alert" className="text-[10px] text-red-400">
+                  <p role="alert" className="text-xs text-red-400">
                     {authError}
                   </p>
                 )}
 
                 {/* Full Name */}
                 <div>
-                  <label className="mb-2 block text-[10px] font-semibold">
+                  <label className="mb-2 block text-xs font-semibold">
                     Full Name
                   </label>
 
@@ -165,7 +165,7 @@ function Register() {
                   </div>
 
                   {errors.fullName && (
-                    <p className="mt-1 text-[9px] text-red-400">
+                    <p className="mt-1 text-xs text-red-400">
                       {errors.fullName.message}
                     </p>
                   )}
@@ -174,7 +174,7 @@ function Register() {
 
                 {/* Email */}
                 <div>
-                  <label className="mb-2 block text-[10px] font-semibold">
+                  <label className="mb-2 block text-xs font-semibold">
                     Email Address
                   </label>
 
@@ -204,7 +204,7 @@ function Register() {
                   </div>
 
                   {errors.email && (
-                    <p className="mt-1 text-[9px] text-red-400">
+                    <p className="mt-1 text-xs text-red-400">
                       {errors.email.message}
                     </p>
                   )}
@@ -213,7 +213,7 @@ function Register() {
 
                 {/* Password */}
                 <div>
-                  <label className="mb-2 block text-[10px] font-semibold">
+                  <label className="mb-2 block text-xs font-semibold">
                     Password
                   </label>
 
@@ -255,7 +255,7 @@ function Register() {
                     ))}
                   </div>
 
-                  <p className="mt-1 text-[9px] text-[#b68cff]">
+                  <p className="mt-1 text-xs text-[#b68cff]">
                     {!password
                       ? "Strong password"
                       : strength <= 1
@@ -266,7 +266,7 @@ function Register() {
                   </p>
 
                   {errors.password && (
-                    <p className="text-[9px] text-red-400">
+                    <p className="text-xs text-red-400">
                       {errors.password.message}
                     </p>
                   )}
@@ -291,13 +291,13 @@ function Register() {
                       />
                     </span>
 
-                    <span className="text-[9px] leading-4 text-gray-300">
+                    <span className="text-xs leading-4 text-gray-300">
                       I agree to the Terms of Service and Privacy Policy.
                     </span>
                   </label>
 
                   {errors.terms && (
-                    <p className="mt-1 text-[9px] text-red-400">
+                    <p className="mt-1 text-xs text-red-400">
                       {errors.terms.message}
                     </p>
                   )}
@@ -314,10 +314,10 @@ function Register() {
 
 
                 {/* Divider */}
-                <div className="flex items-center gap-3 py-2">
+                <div className={`${embedded ? "auth-social-divider" : ""} flex items-center gap-3 py-2`}>
                   <div className="h-px flex-1 bg-[#29272d]" />
 
-                  <span className="text-[8px] tracking-wider text-gray-600">
+                  <span className="text-[10px] tracking-wider text-gray-400">
                     OR CONTINUE WITH
                   </span>
 
@@ -326,11 +326,11 @@ function Register() {
 
 
                 {/* Social buttons */}
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className={`${embedded ? "auth-social-options" : ""} grid grid-cols-2 gap-2.5`}>
 
                   <button
                     type="button"
-                    className="flex h-[39px] items-center justify-center gap-2 rounded-md border border-[#302e35] bg-[#151419] text-[11px] font-medium transition hover:bg-[#1d1b21]"
+                    className="flex h-[39px] items-center justify-center gap-2 rounded-md border border-[#302e35] bg-[#151419] text-xs font-medium transition hover:bg-[#1d1b21]"
                   >
                     <span className="text-sm">◉</span>
                     Google
@@ -338,7 +338,7 @@ function Register() {
 
                   <button
                     type="button"
-                    className="flex h-[39px] items-center justify-center gap-2 rounded-md border border-[#302e35] bg-[#151419] text-[11px] font-medium transition hover:bg-[#1d1b21]"
+                    className="flex h-[39px] items-center justify-center gap-2 rounded-md border border-[#302e35] bg-[#151419] text-xs font-medium transition hover:bg-[#1d1b21]"
                   >
                     <span className="text-sm">✣</span>
                     SSO
@@ -348,7 +348,7 @@ function Register() {
 
 
                 {/* Login */}
-                <p className="pt-5 text-center text-[11px] text-gray-300">
+                <p className="pt-5 text-center text-xs text-gray-300">
                   Already have an account?{" "}
                   <button
                     onClick={() => navigate("/")}
@@ -369,7 +369,7 @@ function Register() {
         <footer className="flex min-h-[58px] flex-col justify-center gap-3 border-t border-[#27252b] bg-[#111014] px-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
 
           <div className="text-sm font-bold">
-            team-sync
+            Team-sync
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-[8px] text-gray-300">
@@ -380,7 +380,7 @@ function Register() {
           </div>
 
           <p className="text-[8px] text-gray-300">
-            © 2024 team-sync. Enterprise Intelligence Platforms.
+            © 2024 Team-sync. Enterprise Intelligence Platforms.
           </p>
 
         </footer>
