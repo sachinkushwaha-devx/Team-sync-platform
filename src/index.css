@@ -89,28 +89,28 @@ canvas {
 
 :root {
     /* COLORS */
-    --primary: #181422;
-    --secondary: #1D1B20;
+  --primary: #6366f1;
+  --secondary: #17243a;
     --tertiary: #C9A74D;
-    --brand-color: #5b5ce6;
+  --brand-color: #6366f1;
   
     --success: #22c55e;
     --warning: #eab308;
     --danger: #ef4444;
   
     /* BACKGROUNDS */
-    --bg-main: #141218;
-    --bg-surface: #0F0D13;
-    --bg-card: #1e293b;
-    --bg-hover: #2b3548;
+    --bg-main: #111827;
+    --bg-surface: #111827;
+    --bg-card: #17243a;
+    --bg-hover: #22334d;
   
     /* TEXT */
     --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
+    --text-secondary: #aab8ca;
+    --text-muted: #91a0b4;
   
     /* BORDER */
-    --border-color: #2d3748;
+    --border-color: #29354a;
   
     /* SHADOW */
     --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.3);
