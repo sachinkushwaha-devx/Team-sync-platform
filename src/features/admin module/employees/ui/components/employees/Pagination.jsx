@@ -7,7 +7,7 @@ const Pagination = ({ pagination, onPageChange }) => {
   const end = Math.min(page * limit, total);
 
   return (
-    <div className="flex items-center justify-between px-6 py-5 border-t border-[var(--border-color)] bg-[var(--bg-surface)]">
+    <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-4 border-t border-[var(--border-color)] bg-[var(--bg-surface)] sm:px-5">
       {/* LEFT */}
       <div className="text-sm text-[var(--text-secondary)]">
         Showing{" "}
@@ -29,7 +29,7 @@ const Pagination = ({ pagination, onPageChange }) => {
         <button
           disabled={page === 1}
           onClick={() => onPageChange(page - 1)}
-          className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all
+          className={`w-9 h-9 rounded-lg flex items-center justify-center border transition-all
             ${
               page === 1
                 ? "opacity-40 cursor-not-allowed border-[var(--border-color)]"
@@ -47,7 +47,7 @@ const Pagination = ({ pagination, onPageChange }) => {
             <button
               key={pageNumber}
               onClick={() => onPageChange(pageNumber)}
-              className={`w-11 h-11 rounded-xl font-medium transition-all
+              className={`w-9 h-9 rounded-lg text-sm font-medium transition-all
                 ${
                   page === pageNumber
                     ? "bg-[var(--primary)] text-white"
@@ -57,13 +57,13 @@ const Pagination = ({ pagination, onPageChange }) => {
               {pageNumber}
             </button>
           );
-        })}d
+        })}
 
         {/* NEXT */}
         <button
           disabled={page === totalPages}
           onClick={() => onPageChange(page + 1)}
-          className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all
+          className={`w-9 h-9 rounded-lg flex items-center justify-center border transition-all
             ${
               page === totalPages
                 ? "opacity-40 cursor-not-allowed border-[var(--border-color)]"

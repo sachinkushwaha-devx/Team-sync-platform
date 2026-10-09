@@ -29,7 +29,7 @@ const Employee = () => {
   }
 
   return (
-    <div className="bg-[var(--bg-main)] p-[var(--page-gutter)]">
+    <div className="bg-[var(--bg-main)] py-2">
       <div className=" mx-auto">
         {/* HEADER */}
         <EmployeeHeader />
@@ -38,7 +38,7 @@ const Employee = () => {
         <EmployeeStats employees={employees} />
 
         {/* TABLE SECTION */}
-        <div className="mt-8 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-3xl overflow-hidden">
+        <div className="mt-6 bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-2xl overflow-hidden">
           <SearchFilterBar
             filters={filters}
             handleSearchFilters={handleSearchFilters}

@@ -2,7 +2,7 @@ const AddEmployeeHeader = ({ isEditing = false }) => {
     const pageTitle = isEditing ? "Update Employee" : "Add Employee";
 
     return (
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
   
         <div className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
   
@@ -16,11 +16,11 @@ const AddEmployeeHeader = ({ isEditing = false }) => {
   
         </div>
   
-        <h1 className="text-6xl font-bold mt-4 text-[var(--text-primary)]">
+        <h1 className="text-3xl font-bold mt-3 text-[var(--text-primary)] sm:text-4xl">
           {pageTitle}
         </h1>
   
-        <p className="mt-3 text-xl text-[var(--text-secondary)]">
+        <p className="mt-2 text-sm text-[var(--text-secondary)] sm:text-base">
           Configure the new team member's workspace profile and permissions.
         </p>
   

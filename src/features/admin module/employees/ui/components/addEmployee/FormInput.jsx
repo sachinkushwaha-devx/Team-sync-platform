@@ -18,7 +18,7 @@ const FormInput = ({
     <div>
       <label
         htmlFor={name}
-        className="block mb-3 text-sm font-semibold text-(--text-secondary)"
+        className="block mb-2 text-sm font-semibold text-(--text-secondary)"
       >
         {label}
       </label>
@@ -30,7 +30,7 @@ const FormInput = ({
           placeholder={placeholder}
           autoComplete={autoComplete}
           {...register(name, registerOptions)}
-          className={`w-full h-16 rounded-2xl border border-(--border-color) bg-(--bg-main) px-5 outline-none ${
+          className={`w-full h-12 rounded-xl border border-(--border-color) bg-(--bg-main) px-4 text-sm outline-none ${
             isPasswordField ? "pr-14" : ""
           }`}
         />
@@ -40,7 +40,7 @@ const FormInput = ({
             onClick={() => setIsPasswordVisible((visible) => !visible)}
             aria-label={isPasswordVisible ? "Hide password" : "Show password"}
             aria-pressed={isPasswordVisible}
-            className="absolute inset-y-0 right-4 flex items-center text-(--text-secondary)"
+            className="absolute inset-y-0 right-3 flex items-center text-(--text-secondary)"
           >
             {isPasswordVisible ? <Eye size={20} /> : <EyeOff size={20} />}
           </button>

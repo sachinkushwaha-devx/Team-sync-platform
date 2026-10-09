@@ -12,24 +12,24 @@ const PersonalInfoForm = ({
   watch,
 }) => {
   return (
-    <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-8">
+    <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-7">
 
       {/* TITLE */}
-      <div className="flex items-center gap-4 pb-6 border-b border-[var(--border-color)]">
+      <div className="flex items-center gap-3 pb-4 border-b border-[var(--border-color)]">
 
         <User
-          size={28}
+          size={22}
           className="text-[var(--brand-color)]"
         />
 
-        <h2 className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
           Personal Information
         </h2>
 
       </div>
 
       {/* CONTENT */}
-      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[13.75rem_minmax(0,1fr)] lg:gap-10">
+      <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[12rem_minmax(0,1fr)] xl:gap-8">
 
         {/* IMAGE */}
         <UploadPhoto
@@ -40,7 +40,7 @@ const PersonalInfoForm = ({
         {/* FORM */}
         <div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
 
             <FormInput
               label="Full Name *"
@@ -61,7 +61,7 @@ const PersonalInfoForm = ({
 
           </div>
 
-          <div className="mt-6">
+          <div className="mt-5">
             <FormInput
               label="Temporary Password *"
               placeholder="Create a password for the employee"
@@ -78,12 +78,12 @@ const PersonalInfoForm = ({
                 },
               }}
             />
-            <p className="mt-2 text-sm text-[var(--text-secondary)]">
+            <p className="mt-2 text-xs text-[var(--text-secondary)] sm:text-sm">
               Share this temporary password with the employee securely.
             </p>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-5">
 
             <FormTextarea
               label="Bio / About"

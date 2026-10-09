@@ -5,24 +5,24 @@ const EmploymentDetailsForm = ({
   errors,
 }) => {
   return (
-    <div className="mt-8 rounded-3xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-8">
+    <div className="mt-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-surface)] p-4 sm:p-6 lg:p-7">
 
       {/* TITLE */}
-      <div className="flex items-center gap-4 pb-6 border-b border-[var(--border-color)]">
+      <div className="flex items-center gap-3 pb-4 border-b border-[var(--border-color)]">
 
         <BriefcaseBusiness
-          size={28}
+          size={22}
           className="text-[var(--brand-color)]"
         />
 
-        <h2 className="text-2xl font-bold text-[var(--text-primary)] sm:text-3xl lg:text-4xl">
+        <h2 className="text-xl font-bold text-[var(--text-primary)] sm:text-2xl">
           Employment Details
         </h2>
 
       </div>
 
       {/* FORM */}
-      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
 
         {/* DEPARTMENT */}
         <div>
@@ -33,7 +33,7 @@ const EmploymentDetailsForm = ({
 
           <select
             {...register("department")}
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
+            className="w-full h-12 rounded-xl border border-[var(--border-color)] bg-[var(--bg-main)] px-4 text-sm text-[var(--text-primary)] outline-none"
           >
             <option value="">
               Select Department
@@ -68,7 +68,7 @@ const EmploymentDetailsForm = ({
 
           <select
             {...register("role")}
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
+            className="w-full h-12 rounded-xl border border-[var(--border-color)] bg-[var(--bg-main)] px-4 text-sm text-[var(--text-primary)] outline-none"
           >
             <option value="">
               Select Role
@@ -96,7 +96,7 @@ const EmploymentDetailsForm = ({
           <input
             type="date"
             {...register("joiningDate")}
-            className="w-full h-16 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-main)] px-5 text-[var(--text-primary)] outline-none"
+            className="w-full h-12 rounded-xl border border-[var(--border-color)] bg-[var(--bg-main)] px-4 text-sm text-[var(--text-primary)] outline-none"
           />
 
         </div>
@@ -108,9 +108,9 @@ const EmploymentDetailsForm = ({
             Status
           </label>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6 text-sm text-[var(--text-primary)]">
 
-            <label className="flex items-center gap-3">
+            <label className="flex items-center gap-2">
 
               <input
                 type="radio"
@@ -122,7 +122,7 @@ const EmploymentDetailsForm = ({
 
             </label>
 
-            <label className="flex items-center gap-3">
+            <label className="flex items-center gap-2">
 
               <input
                 type="radio"

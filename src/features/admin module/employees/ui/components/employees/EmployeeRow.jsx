@@ -88,51 +88,51 @@ const EmployeeRow = ({
   return (
     <tr className="border-b border-[var(--border-color)]">
       {/* PROFILE */}
-      <td className="py-6 px-6">
-        <div className="flex items-center gap-4">
+      <td className="px-4 py-4">
+        <div className="flex items-center gap-3">
           <img
             src={
               employee.avatar ||
               "https://ui-avatars.com/api/?name=" + employee.name
             }
             alt=""
-            className="w-14 h-14 rounded-full object-cover"
+            className="h-11 w-11 rounded-full object-cover"
           />
 
           <div>
-            <h3 className="font-semibold text-lg text-[var(--text-primary)]">
+            <h3 className="font-semibold text-sm text-[var(--text-primary)]">
               {employee.name}
             </h3>
 
-            <p className="text-[var(--text-secondary)]">{employee.email}</p>
+            <p className="text-xs text-[var(--text-secondary)]">{employee.email}</p>
           </div>
         </div>
       </td>
 
       {/* ROLE */}
-      <td className="px-6">
-        <span className="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 font-medium text-sm">
+      <td className="px-4">
+        <span className="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-medium text-xs">
           {employee.role}
         </span>
       </td>
 
       {/* DEPARTMENT */}
-      <td className="px-6 text-[var(--text-primary)] capitalize">
+      <td className="px-4 text-[var(--text-primary)] capitalize">
         {employee.department}
       </td>
 
       {/* STATUS */}
-      <td className="px-6">
+      <td className="px-4">
         <StatusBadge status={employee.status} />
       </td>
 
       {/* DATE */}
-      <td className="px-6 text-[var(--text-secondary)]">
+      <td className="px-4 text-xs text-[var(--text-secondary)]">
         {new Date(employee.createdAt).toDateString()}
       </td>
 
       {/* ACTIONS */}
-      <td className="px-6">
+      <td className="px-4">
         <div ref={actionsRef} className="relative">
           <button
             type="button"

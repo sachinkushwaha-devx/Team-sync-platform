@@ -58,7 +58,7 @@ const AddEmployee = () => {
   };
 
   return (
-    <div className="min-h-dvh bg-[var(--bg-main)] p-[var(--page-gutter)]">
+    <div className="bg-[var(--bg-main)] py-2">
       <div className="mx-auto">
         {/* HEADER */}
         <AddEmployeeHeader />

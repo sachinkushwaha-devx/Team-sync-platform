@@ -5,10 +5,10 @@ const StatCard = ({
     badge,
   }) => {
     return (
-      <div className="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-3xl p-6">
+      <div className="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-2xl p-4 sm:p-5">
         <div className="flex items-center justify-between">
   
-          <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-[var(--primary)] flex items-center justify-center text-2xl">
+          <div className="w-11 h-11 rounded-xl bg-indigo-100 text-[var(--primary)] flex items-center justify-center">
             {icon}
           </div>
   
@@ -18,15 +18,15 @@ const StatCard = ({
   
         </div>
   
-        <div className="mt-6">
+        <div className="mt-4">
   
-          <p className="text-[var(--text-secondary)]">
+          <p className="text-sm text-[var(--text-secondary)]">
             {title}
           </p>
   
-          <h1 className="text-5xl font-bold mt-2 text-[var(--text-primary)]">
+          <h2 className="text-3xl font-bold mt-1 text-[var(--text-primary)]">
             {value}
-          </h1>
+          </h2>
   
         </div>
       </div>

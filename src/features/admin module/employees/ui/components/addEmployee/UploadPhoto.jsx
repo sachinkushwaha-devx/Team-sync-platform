@@ -4,19 +4,19 @@ const UploadPhoto = () => {
   return (
     <div>
 
-      <div className="relative w-[170px] h-[170px] rounded-3xl border-2 border-dashed border-[var(--border-color)] bg-[var(--bg-main)] flex flex-col items-center justify-center">
+      <div className="relative flex h-36 w-36 flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[var(--border-color)] bg-[var(--bg-main)] sm:h-40 sm:w-40">
 
         <Camera
-          size={42}
+          size={32}
           className="text-[var(--text-muted)]"
         />
 
-        <p className="mt-4 text-[var(--text-secondary)] font-medium">
+        <p className="mt-3 text-sm text-[var(--text-secondary)] font-medium">
           Upload Photo
         </p>
 
         <button
-          className="absolute -bottom-2 -right-2 w-12 h-12 rounded-2xl bg-[var(--primary)] text-white flex items-center justify-center"
+          className="absolute -bottom-2 -right-2 flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--primary)] text-white"
         >
           <Pencil size={18} />
         </button>

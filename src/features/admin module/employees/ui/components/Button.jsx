@@ -9,7 +9,7 @@ const Button = ({ children, icon, variant = "primary", handleClick }) => {
   return (
     <button
       onClick={handleClick}
-      className={`px-5 py-3 rounded-2xl flex items-center gap-2 font-medium transition-all duration-300 ${variants[variant]}`}
+      className={`px-4 py-2.5 rounded-xl flex items-center gap-2 text-sm font-medium transition-all duration-300 ${variants[variant]}`}
     >
       {icon}
       {children}
