@@ -33,7 +33,7 @@ const TopNav = () => {
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 bg-(--bg-card)">
-      <div className="flex w-full min-w-0 items-center gap-3 rounded border border-gray-600 bg-(--bg-surface) px-3 py-2 sm:w-auto sm:flex-1 sm:max-w-[30rem]">
+      <div className="flex w-full min-w-0 items-center gap-3 rounded-xl bg-(--bg-surface) px-3 py-2 focus-within:ring-1 focus-within:ring-indigo-500/40 sm:w-auto sm:flex-1 sm:max-w-[30rem]">
         <Search size={23} />
         <input
           className="w-full min-w-0 outline-0 text-(--text-primary)"
