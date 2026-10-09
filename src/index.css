@@ -191,6 +191,209 @@ body:has(.login-page)::-webkit-scrollbar {
   display: none;
 }
 
+html:has(.login-page),
+body:has(.login-page),
+#root:has(.login-page) {
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.login-content {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+}
+
+.login-summary {
+  min-width: 0;
+}
+
+.login-summary-brand {
+  position: absolute;
+  top: clamp(1rem, 3vh, 1.5rem);
+  left: clamp(1.25rem, 4vw, 4rem);
+  width: auto;
+}
+
+.login-landing-content .login-summary {
+  grid-column: 1 / -1;
+}
+
+.login-summary--landing {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-summary--landing .login-summary-brand {
+  top: clamp(0.75rem, 2vh, 1.25rem);
+}
+
+.login-summary--landing .login-summary-brand {
+  transform: none;
+}
+
+.login-summary--landing .login-summary-copy {
+  width: min(100%, 60rem);
+  max-width: 60rem;
+  margin-block: auto;
+}
+
+.login-summary--landing h1 {
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.login-summary-title {
+  color: #f8f5fc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.login-summary-title span {
+  color: #d7c0ff;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.login-summary-description {
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.login-summary--landing .login-summary-copy > p {
+  margin-inline: auto;
+}
+
+.login-summary--landing .login-summary-copy > div:last-child {
+  justify-content: center;
+}
+
+.login-summary--landing .login-summary-footer {
+  position: absolute;
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+}
+
+.login-open-content .login-summary-copy {
+  margin-top: auto;
+}
+
+.login-form-panel {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.login-form-panel > div {
+  max-height: 100%;
+}
+
+@media (max-height: 900px) {
+  .login-open-content .login-form-heading {
+    margin-bottom: 1rem;
+  }
+
+  .login-open-content .login-social-options,
+  .login-open-content .login-social-divider {
+    margin-bottom: 1rem;
+  }
+
+  .login-open-content form.space-y-5 > :not(:last-child) {
+    margin-block-end: 0.75rem;
+  }
+
+  .login-open-content .login-form-panel > div > p {
+    margin-top: 1rem;
+  }
+
+  .login-open-content .login-form-footer {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .login-open-content .login-form-footer > div {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .login-open-content {
+    grid-template-columns: minmax(0, 1.1fr) minmax(22rem, 0.9fr);
+  }
+
+  .login-open-content .login-form-panel {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .login-open-content .login-summary {
+    display: none;
+  }
+
+  .login-open-content .login-form-panel {
+    height: 100dvh;
+    grid-column: 1 / -1;
+    padding-top: 5rem;
+  }
+}
+
+@media (max-height: 680px) {
+  .login-open-content .login-social-options,
+  .login-open-content .login-social-divider,
+  .login-open-content .login-form-footer,
+  .login-open-content .login-mobile-brand {
+    display: none;
+  }
+
+  .login-open-content .login-summary {
+    padding-block: clamp(0.75rem, 3vh, 1.5rem);
+  }
+
+  .login-open-content .login-form-panel {
+    padding-block: clamp(0.5rem, 1.5vh, 0.875rem);
+    padding-top: clamp(3.5rem, 9vh, 4.25rem);
+  }
+
+  .login-open-content .login-form-heading {
+    margin-bottom: clamp(0.5rem, 2vh, 1rem);
+  }
+
+  .login-open-content form.space-y-5 > :not(:last-child) {
+    margin-block-end: clamp(0.25rem, 1vh, 0.5rem);
+  }
+
+  .login-open-content .login-form-heading h2 {
+    font-size: clamp(1.15rem, 2.8vw, 1.8rem);
+  }
+
+  .login-open-content .login-form-heading p,
+  .login-open-content form label,
+  .login-open-content form button,
+  .login-open-content form input {
+    font-size: clamp(0.68rem, 1.5vw, 0.875rem);
+  }
+
+  .login-open-content form input:not([type="checkbox"]) {
+    height: clamp(2rem, 6vh, 2.5rem);
+  }
+
+  .login-open-content form > button[type="submit"] {
+    height: clamp(2rem, 6vh, 2.5rem);
+  }
+
+  .login-open-content form [role="alert"] {
+    padding-block: 0.25rem;
+  }
+}
+
 button,
 input,
 select,

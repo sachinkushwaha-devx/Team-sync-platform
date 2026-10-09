@@ -351,7 +351,7 @@ function Register({ embedded = false }) {
                 <p className="pt-5 text-center text-xs text-gray-300">
                   Already have an account?{" "}
                   <button
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/", { state: { showLogin: true } })}
                     type="button"
                     className="font-semibold text-[#c3a6ff] hover:underline"
                   >
